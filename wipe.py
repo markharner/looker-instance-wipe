@@ -530,41 +530,8 @@ def step_21_delete_lookml_models(sdk, audit, dry_run):
 
 
 def step_22_delete_git_branches(sdk, audit, dry_run):
-    step_header(22, "Delete dev Git branches (contain user PII in branch names)")
-    # The Looker API requires the session to be in dev mode to delete branches.
-    # Switch to dev mode now; this is safe because the entire wipe runs as admin.
-    try:
-        sdk.update_session(models.WriteApiSession(workspace_id="dev"))
-        print("  Switched API session to dev mode")
-    except Exception as e:
-        print(f"  Warning: could not switch to dev mode — branch deletions may fail: {e}")
-    try:
-        projects = sdk.all_projects()
-    except Exception as e:
-        print(f"  Could not list projects: {e}")
-        return
-    for project in projects:
-        try:
-            branches = sdk.all_git_branches(project.id)
-        except Exception as e:
-            print(f"  Could not list branches for project {project.id}: {e}")
-            continue
-        for branch in branches:
-            # Only delete dev branches (non-main/master/production)
-            if branch.name in ("main", "master", "production", "HEAD"):
-                audit.record(22, "DELETE", "git_branch", f"{project.id}/{branch.name}", "skipped", "protected branch")
-                continue
-            if branch.is_production:
-                audit.record(22, "DELETE", "git_branch", f"{project.id}/{branch.name}", "skipped", "production branch")
-                continue
-            if branch.name.startswith("prod_arena"):
-                audit.record(22, "DELETE", "git_branch", f"{project.id}/{branch.name}", "skipped", "prod_arena branch protected")
-                continue
-            safe_delete(
-                audit, 22,
-                lambda name, project_id=project.id: sdk.delete_git_branch(project_id, name),
-                "git_branch", f"{project.id}/{branch.name}", dry_run,
-            )
+    step_header(22, "Delete dev Git branches (SKIPPED)")
+    print("  Step removed: Git branches are no longer deleted via this script.")
 
 
 def step_23_finalize_audit(audit: AuditLog):
