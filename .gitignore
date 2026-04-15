@@ -1,0 +1,5 @@
+.env
+looker.ini
+wipe_audit_*.json
+__pycache__/
+*.pyc
