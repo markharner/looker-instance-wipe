@@ -22,27 +22,27 @@ API-driven teardown script for decommissioning a Looker instance. Executes up to
 
 **Dry run** (no changes made — always do this first):
 ```bash
-python wipe.py --dry-run
+python3 wipe.py --dry-run
 ```
 
 **Real run** (requires typing `wipe` to confirm):
 ```bash
-python wipe.py
+python3 wipe.py
 ```
 
 **Pass credentials as CLI flags** (alternative to `.env`):
 ```bash
-python wipe.py --base-url https://yourcompany.looker.com --client-id ID --client-secret SECRET
+python3 wipe.py --base-url https://yourcompany.looker.com --client-id ID --client-secret SECRET
 ```
 
 **Run specific steps only:**
 ```bash
-python wipe.py --steps 1,2,6 --dry-run
+python3 wipe.py --steps 1,2,6 --dry-run
 ```
 
 **Custom audit log path:**
 ```bash
-python wipe.py --audit-log /path/to/my_audit.json
+python3 wipe.py --audit-log /path/to/my_audit.json
 ```
 
 ## What It Does

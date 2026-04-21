@@ -4,8 +4,8 @@ Looker Instance Wipe — Phase 1 API-driven teardown
 Based on: Looker Instance Wipe Research Report (runbook steps 1–23)
 
 Usage:
-    python wipe.py --base-url https://example.looker.com --client-id ID --client-secret SECRET
-    python wipe.py --base-url https://example.looker.com --client-id ID --client-secret SECRET --dry-run
+    python3 wipe.py --base-url https://example.looker.com --client-id ID --client-secret SECRET
+    python3 wipe.py --base-url https://example.looker.com --client-id ID --client-secret SECRET --dry-run
 
 The currently authenticated admin user is automatically protected from deletion.
 All actions are recorded to an audit log (wipe_audit_<timestamp>.json).
