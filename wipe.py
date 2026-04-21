@@ -693,7 +693,7 @@ def main():
     else:
         print("\nPhase 1 complete.")
         print("Next: Phase 2 (manual UI) — delete LookML projects, verify Trash, verify System Activity.")
-        print("Next: Phase 3 (support ticket) — request deletion attestation, Git branch cleanup, backup purge confirmation.")
+        print("Next: Phase 3 (support ticket) — request deletion attestation, backup purge confirmation.")
 
 
 if __name__ == "__main__":
