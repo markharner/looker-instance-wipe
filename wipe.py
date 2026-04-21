@@ -20,6 +20,9 @@ import traceback
 from datetime import datetime, timezone
 from typing import Any
 
+from dotenv import load_dotenv
+load_dotenv()
+
 import looker_sdk
 from looker_sdk import models40 as models
 
