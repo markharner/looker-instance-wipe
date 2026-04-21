@@ -696,7 +696,7 @@ def main():
     else:
         print("\nPhase 1 complete.")
         print("Next: Phase 2 (manual UI) — delete LookML projects, verify Trash, verify System Activity.")
-        print("Next: Phase 3 (support ticket) — request deletion attestation, backup purge confirmation.")
+        print("Next: Rotate the service account API3 keys before reusing this instance for a new client (Admin > Users > Edit user > API3 Keys > New Key).")
 
 
 if __name__ == "__main__":

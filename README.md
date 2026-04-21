@@ -83,7 +83,7 @@ Every run produces a `wipe_audit_<timestamp>.json` file (or the path specified v
 
 **Phase 2 (manual in Looker UI):** Delete LookML projects, verify Trash is empty, check System Activity.
 
-**Phase 3 (support ticket):** Request deletion attestation and backup purge confirmation from Looker support.
+**Rotate API3 keys:** Before reusing this instance for a new client, generate new API3 keys for the service account (Admin > Users > Edit user > API3 Keys > New Key) and update `.env`.
 
 ## Notes
 
