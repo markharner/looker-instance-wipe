@@ -1,5 +1,13 @@
 # Looker Instance Wipe
 
+> **⚠️ This repo has moved.**
+>
+> Active development continues in the [`insights-platform`](https://github.com/markharner/insights-platform) monorepo under [`tools/looker-instance-wipe/`](https://github.com/markharner/insights-platform/tree/main/tools/looker-instance-wipe). Full commit history from this repo is preserved there.
+>
+> This repo is archived and read-only. Please update any local clones or references.
+>
+> ---
+
 API-driven teardown script for decommissioning a Looker instance. Executes up to 22 steps via the Looker SDK, writes a timestamped audit log of every action taken, and requires explicit confirmation before making any changes.
 
 ## Prerequisites
